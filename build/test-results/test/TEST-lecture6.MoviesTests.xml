@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="lecture6.MoviesTests" tests="1" skipped="0" failures="1" errors="0" timestamp="2022-11-21T06:09:44" hostname="LENOUT" time="0.0">
+<testsuite name="lecture6.MoviesTests" tests="1" skipped="0" failures="1" errors="0" timestamp="2022-11-21T07:06:23" hostname="LENOUT" time="0.0">
   <properties/>
   <testcase name="initializationError" classname="lecture6.MoviesTests" time="0.0">
     <failure message="org.junit.platform.commons.JUnitException: @BeforeAll method 'public void lecture6.MoviesTests.setUp()' must be static unless the test class is annotated with @TestInstance(Lifecycle.PER_CLASS)." type="org.junit.platform.commons.JUnitException">org.junit.platform.commons.JUnitException: @BeforeAll method 'public void lecture6.MoviesTests.setUp()' must be static unless the test class is annotated with @TestInstance(Lifecycle.PER_CLASS).
