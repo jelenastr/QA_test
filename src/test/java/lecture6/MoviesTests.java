@@ -1,20 +1,19 @@
 package lecture6;
 
-import org.assertj.core.api.SoftAssertionError;
+
 import org.assertj.core.api.SoftAssertions;
 import org.assertj.core.data.Percentage;
 import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import static org.assertj.core.api.AssertionsForClassTypes.*;
+import static org.assertj.core.api.Assertions.assertThat;
 
 public class MoviesTests {
 
     Movies movies = new Movies();
 
-    @BeforeAll
+    @BeforeEach
     public void setUp() {
         movies.setMovieName("Rocketman");
         movies.setDirector("Dexter Fletcher");
@@ -25,19 +24,22 @@ public class MoviesTests {
     }
 
     @AfterEach
-    public void tearDown() {
+    public void tearDown(){
         movies = null;
     }
 
     @Test
     public void test1ForMovie() {
+
         SoftAssertions softAssertions = new SoftAssertions();
-        assertThat(movies.getMovieName()).isEqualTo("Rocketman");
-        assertThat(movies.getDirector()).isEqualTo("Dexter Fletcher");
-        assertThat(movies.getGenre()).isEqualTo("Musical / Drama");
-        assertThat(movies.getYear()).isBetween(2018, 2022);
-        assertThat(movies.getBoxOffice()).isCloseTo(190000000, Percentage.withPercentage(10));
-        assertThat(movies.getBudget()).isGreaterThan(30000000);
+
+        softAssertions.assertThat(movies.getMovieName()).isEqualTo("Rocketman");
+        softAssertions.assertThat(movies.getDirector()).isEqualTo("Dexter Fletcher");
+        softAssertions.assertThat(movies.getGenre()).isEqualTo("Drama");
+        softAssertions.assertThat(movies.getYear()).isBetween(2018, 2022);
+        softAssertions.assertThat(movies.getBoxOffice()).isCloseTo(150000000, Percentage.withPercentage(10));
+        softAssertions.assertThat(movies.getBudget()).isGreaterThan(50000000);
+        softAssertions.assertAll();
     }
 
 }
