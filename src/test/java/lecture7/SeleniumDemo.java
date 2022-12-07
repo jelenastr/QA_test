@@ -21,7 +21,7 @@ public class SeleniumDemo {
         dealType.selectByValue("/lv/animals/dogs/sell/");
 
         driver.findElement(By.id("f_o_8_min")).sendKeys("20");
-        driver.findElement(By.id("f_o_1276_min")).sendKeys("2");
+        driver.findElement(By.id("f_o_1276_max")).sendKeys("2");
 
         driver.findElement(By.xpath("//input[@class='b s12']")).click();
 

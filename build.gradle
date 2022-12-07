@@ -26,6 +26,9 @@ dependencies {
     testImplementation 'io.cucumber:cucumber-junit:7.9.0'
     testImplementation group: 'org.junit.vintage', name: 'junit-vintage-engine', version: '5.9.1'
 
+    testImplementation 'com.codeborne:selenide:6.10.1'
+
+
 
 
 
