@@ -3,18 +3,20 @@ package lecture8;
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.Select;
 
+import static com.codeborne.selenide.files.DownloadActions.click;
+
 public class CarsPage extends BasePage {
 
     private final By findElementCars = By.id("mtd_97");
     private final By minCarPrice = By.id("f_o_8_min");
     private final By maxCarPrice = By.id("f_o_8_max");
-    private final By minYearSelector = By.cssSelector("[value='2001']");
-    private final By maxEngineSelector = By.cssSelector("[value='3.0']");
-    private final By carColorSelector = By.cssSelector("[value='6318']");
-    private final By submitButton = By.xpath("//input[@class='b s12']");
+    private final By minYearSelector = By.cssSelector("select[name='topt[18][min]']");
+    private final By maxEngineSelector = By.cssSelector("select[name='topt[15][max]']");
+    private final By carColorSelector = By.cssSelector("select[name='opt[17]']");
+    private final By submitButton = By.cssSelector("input[class='b s12']");
 
 
-    public void pressFindElementCars(String categoryValue) {          //ошибка
+    public void chooseCategory(String categoryValue) {
         driver.findElement(findElementCars).click();
     }
 
@@ -26,7 +28,7 @@ public class CarsPage extends BasePage {
     public void changeMinYearTo(String minYearValue) {
         Select minYear = new Select(driver.findElement(minYearSelector));
         if ("2001".equals(minYearValue)) {
-            minYear.selectByValue("select[id='f_o_18_min']");
+            minYear.selectByValue("2001");
         } else {
             System.out.println("Something went wrong with selector YEAR!");
         }
@@ -35,7 +37,7 @@ public class CarsPage extends BasePage {
     public void changeMaxEngineTo(String maxEngineValue) {
         Select maxEngine = new Select(driver.findElement(maxEngineSelector));
         if ("3.0".equals(maxEngineValue)) {
-            maxEngine.selectByValue("select[id='f_o_15_max']");
+            maxEngine.selectByValue("3.0");
         } else {
             System.out.println("Something went wrong with selector ENGINE VOLUME!");
         }
@@ -44,13 +46,10 @@ public class CarsPage extends BasePage {
     public void changeCarColorTo(String carColorValue) {
         Select carColor = new Select(driver.findElement(carColorSelector));
         if ("Balta".equals(carColorValue)) {
-            carColor.selectByValue("select[class='filter_sel l75']");
+            carColor.selectByValue("6318");
         } else {
             System.out.println("Something went wrong with selector COLOR!");
         }
-    }
 
-    public void pressSubmitButton() {                  //ошибка
-        driver.findElement(submitButton).click();
     }
 }

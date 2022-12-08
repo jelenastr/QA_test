@@ -11,6 +11,7 @@ public class HomePage extends BasePage {
     public void openBaseUrl() {
         startDriver();
         driver.get(baseUrl);
+        driver.manage().window().maximize();
     }
 
     public void chooseCategory(String category) {
@@ -20,6 +21,7 @@ public class HomePage extends BasePage {
             driver.findElement(carsCategory).click();
         } else {
             System.out.println("Something went Wrong!");
+
         }
     }
 }

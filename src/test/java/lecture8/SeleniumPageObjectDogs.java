@@ -3,6 +3,8 @@ package lecture8;
 import org.junit.jupiter.api.Test;
 
 public class SeleniumPageObjectDogs {
+
+    BasePage basePage = new BasePage();
     HomePage homePage = new HomePage();
     DogsPage dogsPage = new DogsPage();
 

@@ -1,8 +1,13 @@
 package lecture8;
 
 import org.junit.jupiter.api.Test;
+import org.openqa.selenium.By;
+
+import static lecture8.BasePage.driver;
 
 public class SeleniumObjectCars {
+
+    BasePage basePage = new BasePage();
     HomePage homePage = new HomePage();
     CarsPage carsPage = new CarsPage();
 
@@ -15,8 +20,18 @@ public class SeleniumObjectCars {
         carsPage.changeMinYearTo("2001");
         carsPage.changeMaxEngineTo("3.0");
         carsPage.changeCarColorTo("Balta");
+
+
+        try {
+            Thread.sleep(4000);
+        } catch (InterruptedException e) {
+        }
+        driver.quit();
+//        basePage.closeChrome();
     }
-//        homePage.stopDriver();
 }
+
+//        homePage.stopDriver();
+
 
 

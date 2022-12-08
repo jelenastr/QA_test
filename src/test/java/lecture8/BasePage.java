@@ -10,11 +10,14 @@ public class BasePage {
         System.setProperty("webDriver.chrome.driver", path);
         driver = new ChromeDriver();
 //        driver.get(url);
-//        driver.manage().window().maximize();
+        driver.manage().window().maximize();
     }
 
-    public void stopDriver() {
-        driver.quit();
+    public void closeChrome() {
     }
+
+//    public void stopDriver() {
+//        driver.quit();
+//    }
 }
 
